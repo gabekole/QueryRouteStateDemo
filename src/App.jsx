@@ -14,10 +14,12 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="container">
-          <header className="d-flex flex-column align-items-center py-3">
-            <nav className="navbar navbar-expand-lg navbar-light bg-light w-100">
+
+        <header className="d-flex justify-content-between align-items-center py-3 bg-light">
+            <h1 className="ms-3 flex-shrink-0">User Management App</h1>
+            <nav className="navbar navbar-expand-lg navbar-light">
               <div className="container-fluid">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li className="nav-item">
                     <Link className="nav-link" to="/">Search</Link>
                   </li>
@@ -28,8 +30,8 @@ function App() {
               </div>
             </nav>
           </header>
-          <main className="text-center mt-4">
-            <h1>User Management</h1>
+
+          <main className="mt-4">
             <Routes>
               <Route path="/" element={<SearchBox />} />
               <Route path="/search" element={<SearchResults />} />
