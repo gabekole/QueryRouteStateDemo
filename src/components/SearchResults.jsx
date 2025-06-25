@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import usersData from '../users.json';
-import { FaStar, FaRegStar } from 'react-icons/fa'; // Import star icons
+import { FaStar, FaRegStar } from 'react-icons/fa';
+
+// 1. Import search parameters function from React Router
+import { useSearchParams } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFavorite, addFavorite } from '../slices/favoritesSlice';
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
 
 function SearchResults() {
-  const query = useQuery();
-  const searchTerm = query.get('name') || '';
+
+  // 2. Declare object and get the "name" query parameter
+  const searchParams = useSearchParams();
+  const searchTerm = searchParams.get('name') || '';
+
+  // 3. Filter users based on the search term
   const [filteredUsers, setFilteredUsers] = useState([]);
+
+  useEffect(() => {
+    setFilteredUsers(
+      usersData.filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
+  }, [searchTerm]);
+
   
   const favorites = useSelector(state => state.favorites.value);
   const dispatch = useDispatch();
@@ -32,22 +43,23 @@ function SearchResults() {
     }
   };
 
-  useEffect(() => {
-    setFilteredUsers(
-      usersData.filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-  }, [searchTerm]);
 
   return (
     <div>
       <h2>Search Results</h2>
       <div className="d-flex flex-column align-items-start">
-        {filteredUsers.map(user => (
+        {
+        // 4. Display the filtered users with .map()
+        filteredUsers.map(user => (
           <div key={user.id} className="card mb-3" style={{ width: '100%' }}>
             <div className="card-body d-flex justify-content-between align-items-center">
+
+              {/* 5. Display a Link to each user's page with a route parameter */}
               <Link to={`/user/${user.id}`} className="card-title h5 mb-0 text-wrap">
                 {user.name}
               </Link>
+
+
               <button
                 className="btn btn-link"
                 onClick={() => toggleFavorite(user)}
