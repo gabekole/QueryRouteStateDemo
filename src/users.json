@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "dob": "1990-01-01",
+      "occupation": "Software Engineer"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "dob": "1985-05-15",
+      "occupation": "Product Manager"
+    }
+]
+  

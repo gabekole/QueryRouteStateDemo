@@ -1,18 +1,9 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit'
+import favoriteReducer from './slices/favoriteSlice'
 
-const initialState = {
-  count: 0,
-};
 
-function counterReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'INCREMENT':
-      return { count: state.count + 1 };
-    default:
-      return state;
-  }
-}
-
-const store = createStore(counterReducer);
-
-export default store;
+export default configureStore({
+  reducer: {
+    favorite: favoriteReducer,
+  },
+})
