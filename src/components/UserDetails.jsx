@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFavorite, addFavorite } from '../slices/favoriteSlice';
+import { removeFavorite, addFavorite } from '../slices/favoritesSlice';
 import usersData from '../users.json';
 
 function UserDetails() {

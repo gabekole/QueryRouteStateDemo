@@ -31,7 +31,7 @@ function App() {
                 </div>
               </div>
             </nav>
-            <hr class="hr hr-blurry" />
+            <hr className="hr hr-blurry" />
           </header>
 
 
