@@ -13,7 +13,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="container-fluid">
+        <div className="container-fluid mr-5 ml-5">
           <header className="container-fluid">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
               <div className="container-fluid">

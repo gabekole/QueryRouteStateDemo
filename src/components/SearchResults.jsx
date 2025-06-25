@@ -18,7 +18,6 @@ function SearchResults() {
 
   // 3. Filter users based on the search term
   const [filteredUsers, setFilteredUsers] = useState([]);
-  
   useEffect(() => {
     setFilteredUsers(
       usersData.filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
