@@ -14,12 +14,11 @@ function SearchResults() {
 
   // 2. Declare object and get the "name" query parameter
   const [searchParams, setSearchParams] = useSearchParams();
-
   const searchTerm = searchParams.get('name') || '';
 
   // 3. Filter users based on the search term
   const [filteredUsers, setFilteredUsers] = useState([]);
-
+  
   useEffect(() => {
     setFilteredUsers(
       usersData.filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()))
