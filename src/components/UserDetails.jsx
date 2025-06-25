@@ -8,10 +8,10 @@ function UserDetails() {
   const { id } = useParams();
   const user = usersData.find(user => user.id === parseInt(id));
 
-  const favorite = useSelector(state => state.favorite.value);
+  const favorites = useSelector(state => state.favorites.value);
   const dispatch = useDispatch();
 
-  const isFavorite = favorite && favorite.id === user.id;
+  const isFavorite = favorites.some(fav => fav.id === user.id);
 
   const toggleFavorite = () => {
     if (isFavorite) {
@@ -30,7 +30,7 @@ function UserDetails() {
           <p>Date of Birth: {user.dob}</p>
           <p>Occupation: {user.occupation}</p>
           <button onClick={toggleFavorite}>
-            {isFavorite ? 'Remove from Favorite' : 'Set as Favorite'}
+            {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
           </button>
         </div>
       ) : (
