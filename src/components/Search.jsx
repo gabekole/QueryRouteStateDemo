@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import usersData from './users.json';
+import usersData from '../users.json';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-function SearchResults() {
+function Search() {
   const query = useQuery();
   const searchTerm = query.get('name') || '';
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -19,7 +19,7 @@ function SearchResults() {
 
   return (
     <div>
-      <h2>Search Results</h2>
+      <h2>Search Users</h2>
       <ul>
         {filteredUsers.map(user => (
           <li key={user.id}>
@@ -31,4 +31,4 @@ function SearchResults() {
   );
 }
 
-export default SearchResults;
+export default Search;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFavorite, addFavorite } from './slices/favoriteSlice';
-import usersData from './users.json';
+import { removeFavorite, addFavorite } from '../slices/favoriteSlice';
+import usersData from '../users.json';
 
 function UserDetails() {
   const { id } = useParams();
@@ -15,7 +15,7 @@ function UserDetails() {
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      dispatch(removeFavorite);
+      dispatch(removeFavorite(user));
     } else {
       dispatch(addFavorite(user));
     }

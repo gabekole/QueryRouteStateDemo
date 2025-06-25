@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import SearchBox from './SearchBox';
-import SearchResults from './SearchResults';
-import UserDetails from './UserDetails';
-import Favorites from './Favorites';
+import SearchBox from './components/SearchBox';
+import SearchResults from './components/SearchResults';
+import UserDetails from './components/UserDetails';
+import Favorites from './components/Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
