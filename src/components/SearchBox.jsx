@@ -12,7 +12,7 @@ function SearchBox() {
 
   return (
     <div>
-      <h2>Search Users</h2>
+      <h2 className="text-center">Search Users</h2>
       <form onSubmit={handleSearch}>
         <input
           type="text"
