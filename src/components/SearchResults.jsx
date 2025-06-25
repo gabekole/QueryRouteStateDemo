@@ -13,7 +13,8 @@ import { removeFavorite, addFavorite } from '../slices/favoritesSlice';
 function SearchResults() {
 
   // 2. Declare object and get the "name" query parameter
-  const searchParams = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const searchTerm = searchParams.get('name') || '';
 
   // 3. Filter users based on the search term
