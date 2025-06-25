@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import Search from './Search';
+import SearchBox from './SearchBox';
+import SearchResults from './SearchResults';
 import UserDetails from './UserDetails';
 import Favorites from './Favorites';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,7 +31,8 @@ function App() {
           <main className="text-center mt-4">
             <h1>User Management</h1>
             <Routes>
-              <Route path="/" element={<Search />} />
+              <Route path="/" element={<SearchBox />} />
+              <Route path="/search" element={<SearchResults />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/user/:id" element={<UserDetails />} />
             </Routes>

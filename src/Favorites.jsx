@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFavorite, addFavorite } from './slices/favoriteSlice';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 function Favorites() {
   const favorite = useSelector(state => state.favorite.value);
