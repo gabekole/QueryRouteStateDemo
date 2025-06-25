@@ -26,10 +26,10 @@ function UserDetails() {
       <h2>User Details</h2>
       {user ? (
         <div>
-          <p>Name: {user.name}</p>
-          <p>Date of Birth: {user.dob}</p>
-          <p>Occupation: {user.occupation}</p>
-          <button onClick={toggleFavorite}>
+          <p className='lead fs-3'>Name: {user.name}</p>
+          <p className='lead'>Date of Birth: {user.dob}</p>
+          <p className='lead'>Occupation: {user.occupation}</p>
+          <button className='btn btn-outline-secondary' onClick={toggleFavorite}>
             {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
           </button>
         </div>

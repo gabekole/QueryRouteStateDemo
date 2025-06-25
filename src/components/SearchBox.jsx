@@ -13,14 +13,18 @@ function SearchBox() {
   return (
     <div>
       <h2 className="text-center">Search Users</h2>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className="d-flex align-items-center">
         <input
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Enter name"
+          className="form-control me-2"
+          style={{ width: '300px', fontSize: '1.2rem' }}
         />
-        <button type="submit">Search</button>
+        <button className="btn btn-primary btn-lg" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
